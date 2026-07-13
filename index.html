@@ -130,8 +130,8 @@ header { background: var(--charcoal); border-bottom: 4px solid var(--red); }
 .contact-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.2rem; }
 .contact-card .role { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-bottom: 0.25rem; }
 .contact-card .name { font-family: 'Libre Baskerville', serif; font-size: 0.98rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.5rem; }
-.contact-card a { display: block; color: var(--silver); text-decoration: none; font-size: 0.84rem; margin-bottom: 0.2rem; }
-.contact-card a:hover { color: var(--red); }
+.contact-card a { display: inline-block; color: var(--red); text-decoration: underline; text-underline-offset: 2px; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
+.contact-card a:hover { color: var(--charcoal); }
 .contact-card span { display: block; font-size: 0.82rem; color: #6b7280; }
 .hours-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
 .hours-card h3 { font-family: 'Libre Baskerville', serif; font-size: 0.98rem; margin-bottom: 0.7rem; }
@@ -149,8 +149,8 @@ header { background: var(--charcoal); border-bottom: 4px solid var(--red); }
 .provider-ma { width: 100%; border-top: 1px solid var(--border); padding-top: 0.7rem; text-align: left; }
 .provider-ma .ma-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--silver-light); margin-bottom: 0.2rem; }
 .provider-ma .ma-name { font-size: 0.85rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.35rem; }
-.provider-ma a { display: block; color: var(--silver); text-decoration: none; font-size: 0.8rem; margin-bottom: 0.18rem; }
-.provider-ma a:hover { color: var(--red); }
+.provider-ma a { display: inline-block; color: var(--red); text-decoration: underline; text-underline-offset: 2px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.18rem; word-break: break-all; }
+.provider-ma a:hover { color: var(--charcoal); }
 
 /* FOOTER */
 footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: var(--silver-light); border-top: 1px solid var(--border); background: white; }
@@ -207,6 +207,7 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
 
     <div class="pill-group-label">Sleep Apnea</div>
     <button class="surg-pill" onclick="showSurg('inspire')">Inspire (Hypoglossal Nerve Stimulator)</button>
+    <button class="surg-pill" onclick="showSurg('genio')">Genio Sleep Apnea Innovation</button>
     <button class="surg-pill" onclick="showSurg('esp')">Expansion Sphincter Pharyngoplasty</button>
 
     <div class="pill-group-label">Thyroid &amp; Parathyroid</div>
@@ -227,7 +228,7 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
     <button class="info-pill" onclick="showInfo('preop')">Pre-Operative Instructions</button>
     <button class="info-pill" onclick="showInfo('postop')">Post-Operative General Instructions</button>
     <button class="info-pill" onclick="showInfo('allergy')">Allergy Management</button>
-    <button class="info-pill" onclick="showInfo('hearing')">Hearing Loss, Hearing Aids &amp; Tinnitus</button>
+    <button class="info-pill" onclick="showInfo('hearing')">Hearing Loss &amp; Dementia Risk</button>
     <button class="info-pill" onclick="showInfo('tinnitus')">Tinnitus</button>
     <button class="info-pill" onclick="showInfo('sleep')">Sleep Apnea / CPAP</button>
     <button class="info-pill" onclick="showInfo('thyroid-info')">Thyroid Disease Overview</button>
@@ -235,6 +236,7 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
     <button class="info-pill" onclick="showInfo('incision')">Incision &amp; Scar Care</button>
     <button class="info-pill" onclick="showInfo('bppv')">Positional Vertigo (BPPV)</button>
     <button class="info-pill" onclick="showInfo('rhino-info')">Rhinoplasty: Recovery &amp; Expectations</button>
+    <button class="info-pill" onclick="showInfo('nosebleed')">Nosebleeds (Epistaxis)</button>
   </div>
 </div>
 
@@ -481,6 +483,7 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
         <li>Change in nasal appearance</li>
         <li>Significant bleeding requiring intervention</li>
         <li>Cerebrospinal fluid leak</li>
+        <li><strong>Empty nose syndrome.</strong> This is a condition in which the nose feels paradoxically blocked, dry, or "too open" despite a wide airway, and is thought to result from removing too much turbinate tissue. It is <strong>exceedingly rare with modern surgical technique</strong>. Turbinate reduction today is deliberately conservative — the goal is to reduce the <em>bulk</em> of the turbinate while preserving its lining and function, rather than removing it. Your surgeon takes specific steps to avoid this.</li>
         <li>Adverse reaction to anesthesia</li>
       </ul>
     </div>
@@ -597,13 +600,12 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
     <div class="info-card aftercare">
       <div class="card-heading">🏠 Aftercare &amp; Follow-Up</div>
       <ul>
-        <li><strong>Sleep with your head elevated</strong> (2–3 pillows or a recliner) for the first 1–2 weeks to reduce swelling.</li>
+        <li><strong>Sleep with your head elevated</strong> for the first several days to reduce swelling. Extra pillows work well, or a recliner if that's more comfortable for you.</li>
         <li>Use cool compresses around — <em>not directly on</em> — the nose for the first 48 hours to limit bruising.</li>
         <li>The external splint is typically removed at about <strong>1 week</strong>. Internal splints, if placed, are usually removed at the same visit.</li>
         <li><strong>Do NOT blow your nose for 2 weeks.</strong> Sneeze with your mouth open.</li>
         <li>Begin saline sprays or gentle rinses as directed to clear crusting.</li>
         <li>Avoid strenuous activity, heavy lifting, and bending for <strong>2–3 weeks</strong>; no contact sports or any activity risking a blow to the nose for <strong>6 weeks or longer</strong>.</li>
-        <li><strong>Do not rest glasses or sunglasses on the bridge of your nose</strong> for about 4–6 weeks — tape them to your forehead or use contacts.</li>
         <li>Avoid aspirin and NSAIDs before and after surgery unless approved by your surgeon.</li>
         <li>Protect your nose from the sun; healing skin sunburns easily.</li>
         <li><strong>Be patient with the result.</strong> Most bruising fades in 2 weeks and you'll look presentable in public, but swelling resolves slowly. Roughly 80–90% of swelling is gone by 2–3 months, while the final refined result — especially at the tip — can take a <strong>full year or longer</strong> to appear. Judging your nose too early is the most common source of unnecessary worry.</li>
@@ -664,7 +666,7 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <p><strong>Rare but serious:</strong></p>
       <ul>
         <li>Significant bleeding requiring intervention</li>
-        <li>Excessive turbinate reduction resulting in dryness or crusting</li>
+        <li><strong>Empty nose syndrome</strong> — excessive turbinate reduction leading to a paradoxical sense of blockage, dryness, or crusting despite an open airway. This is <strong>exceedingly rare with modern technique</strong>, which deliberately preserves the turbinate lining and function rather than removing tissue aggressively.</li>
         <li>Adverse reaction to medications or local anesthetic</li>
         <li>Vasovagal reaction (lightheadedness or fainting)</li>
         <li>Persistent pain or discomfort</li>
@@ -881,7 +883,7 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
         <li><strong>Hydration is the single most important aftercare task.</strong> Drink cool, clear fluids constantly. Popsicles, ice chips, and water are encouraged.</li>
         <li>Soft, cool foods for the first 2 weeks. Avoid crunchy, sharp, or scratchy foods.</li>
         <li>Take prescribed pain medication on a schedule — don't wait for pain to become severe.</li>
-        <li><strong>No aspirin or ibuprofen</strong> — these increase bleeding risk. Use acetaminophen (Tylenol) only.</li>
+        <li><strong>No aspirin</strong> — it increases bleeding risk.</li>
         <li>Avoid strenuous activity and contact sports for <strong>2 full weeks</strong>.</li>
         <li>Ear pain (referred pain) is very common and does NOT mean an ear infection.</li>
         <li>Follow-up at <strong>2–3 weeks</strong> after surgery.</li>
@@ -949,7 +951,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
     <div class="info-card description">
       <div class="card-heading">📋 About This Procedure</div>
       <p>Inspire is an implantable device that treats obstructive sleep apnea (OSA) for people who cannot tolerate or do not benefit from CPAP. Rather than using a mask and pressurized air, it works from inside the body: a small generator (similar to a pacemaker) is placed under the skin of the upper chest, with a lead that gently stimulates the <strong>hypoglossal nerve</strong> — the nerve that controls tongue movement. During sleep, the device senses your breathing and delivers mild stimulation with each breath, moving the tongue slightly forward to keep the airway open.</p>
-      <p>The device is implanted through one or two small incisions under general anesthesia, usually as an outpatient or with a single overnight stay. It is turned on about <strong>4 weeks</strong> after surgery, once healing is complete, and you control it with a small handheld remote — turning it on at bedtime and off in the morning.</p>
+      <p>The device is implanted through <strong>two small incisions</strong> under general anesthesia, usually as an outpatient or with a single overnight stay. It is turned on about <strong>4 weeks</strong> after surgery, once healing is complete, and you control it with a small handheld remote — turning it on at bedtime and off in the morning.</p>
+      <p><strong>Battery replacement.</strong> The generator contains a battery that will eventually need to be replaced — typically about <strong>every 10 years</strong>. This is a planned, minor outpatient procedure to exchange the generator; the nerve lead stays in place.</p>
       <p><strong>Who is a candidate?</strong> Inspire is a second-line treatment for adults with moderate-to-severe OSA who have failed or cannot tolerate CPAP. Current FDA criteria include an AHI (apnea-hypopnea index) in the range of about <strong>15 to 100</strong>, a body mass index generally <strong>at or below 40</strong>, and mostly obstructive (not central) events. A brief scope procedure called a <strong>drug-induced sleep endoscopy</strong> is done beforehand to confirm the airway collapses in a pattern the device can treat — specifically, that there is no complete concentric collapse at the soft palate.</p>
     </div>
     <div class="info-card risks">
@@ -970,13 +973,14 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <ul>
         <li>Bleeding or injury to nearby nerves or structures</li>
         <li>Adverse reaction to anesthesia</li>
-        <li>Need for future device revision or battery replacement (generator battery typically lasts about 11 years)</li>
+        <li>Need for future device revision</li>
       </ul>
     </div>
     <div class="info-card aftercare">
       <div class="card-heading">🏠 Aftercare &amp; Follow-Up</div>
       <ul>
         <li>Expect soreness and swelling at the chest and neck incisions for several days; most people manage well with over-the-counter pain medication.</li>
+        <li>It is common to feel a <strong>foreign body sensation</strong> at the incision site — an awareness of the device under the skin. This is temporary and usually resolves over a couple of months as the area heals and you get used to it.</li>
         <li>Avoid raising the arm on the surgery side above shoulder height and avoid heavy lifting for <strong>1 week</strong> to protect the healing lead.</li>
         <li>Keep incisions clean and dry per your surgeon's instructions.</li>
         <li>The device stays <strong>off</strong> until your activation visit about <strong>4 weeks</strong> after surgery.</li>
@@ -989,6 +993,64 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="card-heading">📞 When To Call Our Office</div>
       <ul>
         <li>Increasing redness, swelling, warmth, or drainage at any incision</li>
+        <li>Fever greater than <strong>101°F (38.3°C)</strong></li>
+        <li>Severe or worsening pain not controlled by medication</li>
+        <li>The device seems not to work, or stimulation is painful or intolerable</li>
+        <li>Persistent tongue weakness or difficulty speaking or swallowing</li>
+        <li>Any other concerning symptoms</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GENIO -->
+  <div class="surg-panel" id="surg-genio">
+    <div class="surg-title">Genio Sleep Apnea Innovation</div>
+    <span class="surg-badge badge-or">Operating Room · General Anesthesia</span>
+    <div class="info-card description">
+      <div class="card-heading">📋 About This Procedure</div>
+      <p>Genio is an implanted system that treats obstructive sleep apnea (OSA) by working with your natural anatomy rather than using a mask and pressurized air. It delivers gentle stimulation to <strong>both branches of the hypoglossal nerve</strong> — the nerve that controls tongue movement — moving the tongue forward to keep the airway open during sleep.</p>
+      <p><strong>What makes it different.</strong> The implant is <strong>battery-free and has no leads</strong>. It is small, sits entirely beneath the skin under the chin, and is placed through a <strong>single incision</strong> during an outpatient procedure — leaving only a small scar under the chin. Because there is no battery or wiring to run elsewhere in the body, there is no chest pocket and nothing visible from the outside.</p>
+      <p><strong>How you use it.</strong> Each night, you attach a small wireless activation chip to a fresh adhesive patch under your chin. The chip wirelessly powers the implant, and therapy can be paused or restarted through a companion smartphone app. In the morning, the patch comes off and the chip goes on its charger for the next night.</p>
+      <p>Most patients return home the same day and resume light activities within a few days. Ask us about scheduling an evaluation to learn whether Genio is right for you.</p>
+    </div>
+    <div class="info-card risks">
+      <div class="card-heading">⚠️ Potential Risks &amp; Complications</div>
+      <p><strong>Less common events</strong> (may affect between 1 in 10 and 1 in 100 patients):</p>
+      <ul>
+        <li>Impaired or painful swallowing or speaking</li>
+        <li>Dry mouth or hoarse voice</li>
+        <li>Bleeding or bruising</li>
+        <li>Mild tongue abrasion or weakness</li>
+        <li>Headache</li>
+        <li>Increased snoring</li>
+        <li>Temporary issues with the external components that delay a night of therapy</li>
+      </ul>
+      <p><strong>Rare events</strong> (may affect fewer than 1 in 100 patients):</p>
+      <ul>
+        <li>Tongue twitching or spasm</li>
+        <li>Altered taste</li>
+        <li>Infection</li>
+        <li>Device migration requiring repositioning or removal</li>
+        <li>Allergic reaction to the implant materials</li>
+      </ul>
+      <p>As with any surgically implanted device, individual risks vary. Your doctor will review the full risk profile with you to determine whether Genio is right for you.</p>
+    </div>
+    <div class="info-card aftercare">
+      <div class="card-heading">🏠 Aftercare &amp; Follow-Up</div>
+      <ul>
+        <li>Expect soreness and swelling at the incision under the chin for several days; most people manage well with over-the-counter pain medication.</li>
+        <li>Avoid heavy lifting for <strong>1 week</strong> to protect the healing site.</li>
+        <li>Keep the incision clean and dry per your surgeon's instructions.</li>
+        <li>The device stays <strong>off</strong> until your activation visit about <strong>4–6 weeks</strong> after surgery.</li>
+        <li>At activation, your provider programs the device and teaches you to use the phone app and the external components. Settings are adjusted over several follow-up visits for comfort and effectiveness.</li>
+        <li>A follow-up sleep study is usually done a few months after activation to confirm the device is controlling your apnea.</li>
+        <li>Tell any future clinician you have an implanted stimulator — it matters for certain <strong>MRI</strong> scans.</li>
+      </ul>
+    </div>
+    <div class="info-card call-us">
+      <div class="card-heading">📞 When To Call Our Office</div>
+      <ul>
+        <li>Increasing redness, swelling, warmth, or drainage at the incision</li>
         <li>Fever greater than <strong>101°F (38.3°C)</strong></li>
         <li>Severe or worsening pain not controlled by medication</li>
         <li>The device seems not to work, or stimulation is painful or intolerable</li>
@@ -1531,45 +1593,67 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
 
   <!-- HEARING LOSS -->
   <div class="info-panel" id="info-hearing">
-    <div class="info-sheet-title">Hearing Loss, Hearing Aids &amp; Tinnitus</div>
+    <div class="info-sheet-title">Can Treating Hearing Loss Help Prevent Dementia?</div>
     <div class="info-card description">
-      <div class="card-heading">📋 Understanding Hearing Loss</div>
-      <p>Hearing loss is the third most common chronic health condition in adults. There are two main types. <strong>Sensorineural hearing loss</strong> results from damage to the inner ear (cochlea) or the auditory nerve — the most common type in adults, often caused by aging (presbycusis), noise exposure, genetics, or certain medications. It is typically permanent but manageable with hearing aids or cochlear implants. <strong>Conductive hearing loss</strong> results from a problem in the outer or middle ear (earwax, fluid, perforated eardrum, or bone abnormalities) that prevents sound from being conducted effectively — often treatable medically or surgically.</p>
-    </div>
-    <div class="info-card aftercare">
-      <div class="card-heading">🔊 Signs of Hearing Loss</div>
-      <ul>
-        <li>Frequently asking others to repeat themselves</li>
-        <li>Difficulty understanding speech in noisy environments or on the phone</li>
-        <li>Turning up the television or radio to volumes others find too loud</li>
-        <li>Missing parts of conversations, especially high-pitched voices or consonants</li>
-        <li>Ringing, buzzing, or hissing in the ears (tinnitus) — often accompanies hearing loss</li>
-        <li>Feeling that people mumble or speak unclearly</li>
-        <li>Withdrawing from conversations or social situations because of difficulty hearing</li>
-      </ul>
+      <div class="card-heading">📋 Why This Matters</div>
+      <p>Many people think of hearing loss as a minor inconvenience of getting older. But a growing body of research shows that <strong>untreated hearing loss is linked to a higher risk of memory problems and dementia</strong>. The encouraging part: treating hearing loss may help protect your brain — and it improves your daily life right now, regardless.</p>
+      <p><strong>How common is it?</strong> About 1 in 5 Americans — roughly 73 million people — have some degree of hearing loss. Among adults 71 and older, nearly 7 out of 10 are affected, and by age 90 that figure reaches 96%. Yet fewer than 3 in 10 older adults with hearing loss use hearing aids.</p>
     </div>
     <div class="info-card general">
-      <div class="card-heading">🎧 About Hearing Aids</div>
+      <div class="card-heading">👂 Why Hearing Declines With Age</div>
+      <p>Hearing depends on two things working together: your ears and your brain. Inside the inner ear are thousands of tiny sensory cells called <em>hair cells</em>, which convert sound waves into electrical signals your brain interprets as speech, music, and meaning.</p>
+      <p>With age, these hair cells gradually break down — and unlike most cells in the body, <strong>they do not grow back</strong>. At the same time, the brain pathways that process sound can weaken. The usual first sign is difficulty understanding speech in noisy places.</p>
+      <p><strong>Things that accelerate hearing loss:</strong></p>
       <ul>
-        <li>Modern hearing aids are highly sophisticated digital devices that amplify and process sound — dramatically improving quality of life for people with sensorineural hearing loss.</li>
-        <li>Styles range from very small completely-in-canal (CIC) and invisible-in-canal (IIC) devices to behind-the-ear (BTE) and receiver-in-canal (RIC/RITE) models. Your audiologist will recommend the best style based on your hearing loss, ear anatomy, and lifestyle.</li>
-        <li>Both ears are typically fit with hearing aids (binaural fitting) when loss is present in both ears — this significantly improves understanding of speech, directionality, and listening in noise compared to a single device.</li>
-        <li>An adjustment period of several weeks to months is normal. The brain requires time to relearn how to process amplified sound.</li>
-        <li>Most hearing aids today are Bluetooth-compatible and can stream directly from smartphones, televisions, and other devices.</li>
-        <li>Hearing aids require regular cleaning and maintenance. Battery life ranges from several days (disposable batteries) to a week or more (rechargeable models).</li>
-        <li>Medicare and most insurance plans now provide some coverage for hearing aids — ask our team for details.</li>
+        <li>Lifetime loud-noise exposure</li>
+        <li>Smoking</li>
+        <li>Diabetes, high blood pressure, and heart disease</li>
+        <li>Family history of hearing loss</li>
       </ul>
     </div>
-    <div class="info-card call-us">
-      <div class="card-heading">📞 When To Call Our Office</div>
+    <div class="info-card risks">
+      <div class="card-heading">🧠 What the Research Shows</div>
+      <p>Large studies have consistently found a link between hearing loss and dementia:</p>
       <ul>
-        <li>Sudden hearing loss in one or both ears — this is a medical emergency and warrants <strong>same-day evaluation</strong></li>
-        <li>Hearing loss associated with dizziness, vertigo, or ear fullness</li>
-        <li>New onset of ringing or noise in one ear</li>
-        <li>Ear pain, drainage, or bleeding associated with hearing changes</li>
-        <li>Any adult or child who has failed a hearing screening</li>
-        <li>Concerns about a child's speech development or response to sound</li>
+        <li>A review of 50 studies including over 1.5 million people found hearing loss was associated with a <strong>35% increased risk of dementia</strong>. Each 10-decibel worsening of hearing raised the risk by a further 16%.</li>
+        <li>In 2024, the <strong>Lancet Commission on Dementia</strong> — one of the most influential expert panels in the field — identified hearing loss as the <strong>single largest modifiable risk factor for dementia</strong>, accounting for up to 7% of cases worldwide. Of all the health and lifestyle factors you can actually change, this may be the one with the biggest impact.</li>
       </ul>
+      <p><strong>Why might hearing loss affect the brain?</strong> Researchers believe several mechanisms work together:</p>
+      <ul>
+        <li><strong>Brain overload.</strong> When hearing is poor, the brain works much harder to fill in gaps — potentially draining mental resources away from memory and thinking.</li>
+        <li><strong>Brain shrinkage.</strong> With less sound reaching it, the brain's sound-processing regions — and nearby memory areas including the hippocampus — can physically shrink. Imaging studies confirm faster brain volume loss in people with hearing loss.</li>
+        <li><strong>Social isolation.</strong> Difficulty hearing leads people to withdraw from conversation. Isolation is itself an established dementia risk factor.</li>
+        <li><strong>Shared aging processes.</strong> Some of the same changes that damage hearing — such as small blood vessel disease — may also drive brain aging. In this case hearing loss may be an early <em>warning sign</em> rather than a cause.</li>
+      </ul>
+    </div>
+    <div class="info-card aftercare">
+      <div class="card-heading">🔬 Does Treatment Actually Help?</div>
+      <p>This is the key question, and the evidence is encouraging but still developing — it's worth understanding honestly.</p>
+      <p><strong>Observational studies</strong> (which follow people over time) are promising: an analysis of over 126,000 people found hearing aid users had a <strong>19% lower risk</strong> of long-term cognitive decline than those with untreated hearing loss.</p>
+      <p><strong>The ACHIEVE trial (2023)</strong> was the first major randomized trial to test this directly. Nearly 1,000 adults aged 70–84 with untreated hearing loss were randomly assigned to hearing aids or health education.</p>
+      <ul>
+        <li><strong>In the group overall, there was no significant difference</strong> in cognitive decline after 3 years.</li>
+        <li><strong>But among participants already at higher risk</strong> — older, more health conditions, lower baseline cognition — hearing aids <strong>reduced the rate of cognitive decline by 48%</strong> over 3 years. That is a large and meaningful effect.</li>
+      </ul>
+      <p><strong>What this means for you:</strong> treating hearing loss appears most protective for people already at elevated risk — which includes many older adults with diabetes, hypertension, or a family history of dementia. And in every group studied, hearing aids improved communication and quality of life. That benefit is real whatever the brain research ultimately concludes.</p>
+    </div>
+    <div class="info-card general">
+      <div class="card-heading">✅ What You Can Do</div>
+      <p><strong>1. Get your hearing tested.</strong> If you're over 60, or notice trouble following conversation in noisy settings, ask for a hearing evaluation. It's simple and painless.</p>
+      <p><strong>2. Consider hearing aids if recommended.</strong> They don't restore perfect hearing, but they make speech clearer and reduce the strain on your brain.</p>
+      <ul>
+        <li><strong>Over-the-counter hearing aids</strong> became available in the U.S. in October 2022. They're intended for adults with mild-to-moderate hearing loss (which covers most people with hearing loss) and require no prescription.</li>
+        <li><strong>Prescription hearing aids</strong> are fitted by an audiologist and are appropriate for more significant loss.</li>
+        <li><strong>Cochlear implants</strong> are an option for severe-to-profound loss when hearing aids no longer provide enough benefit.</li>
+      </ul>
+      <p><strong>3. Don't wait.</strong> Earlier treatment appears more beneficial. Many people delay for years — and that's time the brain spends straining.</p>
+      <p><strong>4. Protect the hearing you have.</strong> Use earplugs or noise-canceling headphones in loud environments, and avoid prolonged high-volume earbud use.</p>
+      <p><strong>5. Address your other risk factors.</strong> Hearing loss is one of 14 modifiable dementia risk factors. Staying physically active, managing blood pressure/diabetes/cholesterol, staying socially engaged, not smoking, limiting alcohol, and treating depression all matter.</p>
+    </div>
+    <div class="info-card call-us">
+      <div class="card-heading">📞 The Bottom Line</div>
+      <p>Hearing loss is not just an inconvenience — it is among the most important <em>modifiable</em> risk factors for dementia. Research is ongoing, but the evidence suggests that treating hearing loss improves quality of life now and may help protect your brain, especially if you're already at higher risk for cognitive decline.</p>
+      <p>If you or someone you love is struggling to hear, <strong>ask us about a hearing evaluation.</strong> It's a simple first step that could make a meaningful difference for long-term brain health.</p>
     </div>
   </div>
 
@@ -1939,7 +2023,7 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="card-heading">✅ Do's &amp; Don'ts During Healing</div>
       <p><strong>Do:</strong></p>
       <ul>
-        <li>Sleep with your head elevated for the first 1–2 weeks</li>
+        <li>Sleep with your head elevated for the first several days — extra pillows, or a recliner if more comfortable</li>
         <li>Sneeze with your mouth open</li>
         <li>Use saline spray as directed to soften crusting</li>
         <li>Protect your nose from the sun, and use sunscreen once healed</li>
@@ -1948,7 +2032,6 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <p><strong>Don't:</strong></p>
       <ul>
         <li><strong>Blow your nose for 2 weeks</strong></li>
-        <li>Rest glasses on the bridge of your nose for 4–6 weeks</li>
         <li>Do strenuous exercise or heavy lifting for 2–3 weeks</li>
         <li>Play contact sports or risk any blow to the nose for at least 6 weeks</li>
         <li>Pick at crusts or the incision</li>
@@ -1968,6 +2051,92 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       </ul>
     </div>
   </div>
+  <div class="info-panel" id="info-nosebleed">
+    <div class="info-sheet-title">How to Treat a Nosebleed at Home</div>
+    <div class="info-card description">
+      <div class="card-heading">📋 What Is a Nosebleed?</div>
+      <p>A nosebleed (medically called <em>epistaxis</em>) is very common — about 60% of people will have at least one in their lifetime. The great majority come from the front part of the nose and can be safely and effectively stopped at home using the steps below.</p>
+      <p>The single most important thing to know: <strong>firm, uninterrupted pressure on the soft part of the nose is what stops the bleeding.</strong> Most nosebleeds that "won't stop" are simply not being held long enough.</p>
+    </div>
+    <div class="info-card risks">
+      <div class="card-heading">🩸 Stopping a Nosebleed: Step by Step</div>
+      <p><strong>Step 1 — Sit up and lean forward.</strong> Sit in a chair and tip your body slightly forward, as if smelling a flower. <strong>Do NOT tilt your head back</strong> — that sends blood down your throat and can cause coughing, choking, or vomiting.</p>
+      <p><strong>Step 2 — Gently blow your nose once.</strong> Clear out any old clots. This feels counterintuitive, but removing stale clots allows a new, stronger clot to form. Do this <em>once</em>, before you start pressure — not repeatedly.</p>
+      <p><strong>Step 3 — Use oxymetazoline (Afrin).</strong> Choose whichever is easier:</p>
+      <ul>
+        <li><strong>Option A — Spray:</strong> 2–3 sprays of oxymetazoline into the bleeding nostril, then go to Step 4.</li>
+        <li><strong>Option B — Soaked cotton</strong> (works better for heavier bleeding): spray oxymetazoline onto a cotton ball until it's damp, gently insert it into the bleeding nostril, and leave enough sticking out to remove it easily later. Then go to Step 4 with the cotton in place.</li>
+      </ul>
+      <p><strong>Step 4 — Pinch the SOFT part of your nose.</strong> Using thumb and index finger, firmly squeeze the fleshy lower portion of the nose — <em>below</em> the bony bridge — pressing both sides together against the middle wall. If you placed cotton, pinch over it. <strong>Pinching the bony part does nothing.</strong></p>
+      <p><strong>Step 5 — Hold for a full 15–20 minutes. Do not peek.</strong> This is the step people get wrong. Set a timer. Breathe through your mouth. Spit blood out rather than swallowing it (swallowed blood causes nausea). <strong>Do not release to check</strong> — every peek restarts the clock.</p>
+      <p><strong>Step 6 — Release and assess.</strong> Gently let go and remove the cotton if used. If bleeding has stopped, follow the aftercare below. If it hasn't, repeat once with fresh oxymetazoline-soaked cotton and another full 15–20 minutes.</p>
+    </div>
+    <div class="info-card general">
+      <div class="card-heading">🧰 Nosebleed Supply Kit</div>
+      <p>If you're prone to nosebleeds, keep these together in a small bag so you can act immediately:</p>
+      <ul>
+        <li><strong>Oxymetazoline nasal spray</strong> (Afrin or store brand, 0.05%) — over the counter at any pharmacy</li>
+        <li><strong>Cotton balls or small cotton pledgets</strong> — to soak with the spray</li>
+        <li><strong>Saline nasal spray</strong> — for moisturizing afterward</li>
+        <li><strong>Petroleum jelly (Vaseline) or nasal saline gel</strong> — to keep the nose moist and prevent recurrence</li>
+        <li><strong>A small bowl or cup</strong> — to spit into</li>
+        <li><strong>Tissues or paper towels</strong></li>
+        <li><strong>A timer</strong> (your phone works) — to actually hold the full 15–20 minutes</li>
+      </ul>
+      <p>Check the expiration date on your oxymetazoline periodically and replace it when expired.</p>
+    </div>
+    <div class="info-card call-us">
+      <div class="card-heading">⚠️ Important Safety Notes About Afrin</div>
+      <ul>
+        <li><strong>Do not use oxymetazoline for more than 3 days in a row.</strong> Longer use causes rebound congestion — your nose becomes <em>more</em> stuffed up — and dries the nasal lining.</li>
+        <li><strong>Use caution if you have high blood pressure, heart disease, or glaucoma.</strong> Oxymetazoline can affect blood pressure and heart rate. If this applies to you, ask us in advance whether it's safe for you to keep on hand.</li>
+        <li><strong>Do not use in children under 6</strong> unless directed by a physician.</li>
+        <li>If you're unsure whether it's safe for you, <strong>use the pinch-and-hold technique without it</strong> — the pressure is what matters most — and seek care if bleeding doesn't stop.</li>
+      </ul>
+    </div>
+    <div class="info-card general">
+      <div class="card-heading">🚫 Common Mistakes</div>
+      <ul>
+        <li><strong>Tilting the head back.</strong> Sends blood down the throat. Lean forward instead.</li>
+        <li><strong>Stuffing dry tissue or toilet paper into the nose.</strong> It sticks to the clot and re-tears it on removal. Use only oxymetazoline-soaked cotton.</li>
+        <li><strong>Letting go to check.</strong> The most common reason a nosebleed "won't stop." Hold the full time.</li>
+        <li><strong>Pinching the bony bridge.</strong> The bleeding site is lower — squeeze the soft part.</li>
+      </ul>
+      <p><strong>What about ice?</strong> Applying ice to the nose or forehead is a popular home remedy, but there is no strong evidence it helps. Firm, steady pressure on the soft part of the nose is what actually works.</p>
+    </div>
+    <div class="info-card aftercare">
+      <div class="card-heading">🏠 Aftercare &amp; Preventing the Next One</div>
+      <p><strong>For at least one week after a nosebleed:</strong></p>
+      <ul>
+        <li><strong>Do not blow your nose forcefully</strong> and <strong>do not pick your nose.</strong> (The single gentle blow in Step 2 is only for clearing clots at the start — once bleeding has stopped, leave the nose alone.)</li>
+        <li>Sneeze with your <strong>mouth open</strong> to release pressure.</li>
+        <li>Avoid strenuous activity and heavy lifting.</li>
+        <li><strong>Keep the nose moist</strong> — saline spray 2–3 times daily, plus a thin layer of petroleum jelly or saline gel just inside each nostril twice a day.</li>
+        <li>Run a <strong>cool-mist humidifier</strong> in the bedroom, especially in winter. This matters a lot at Colorado's dry altitude.</li>
+        <li>For the first <strong>24 hours</strong>, avoid hot drinks, hot showers, and alcohol — heat dilates blood vessels and can restart the bleeding.</li>
+      </ul>
+      <p><strong>Longer term:</strong> keep the nose moist year-round, don't pick, keep fingernails trimmed (especially in children), manage allergies and colds so you're not constantly sneezing and blowing, and if you use nasal oxygen or CPAP, <strong>make sure the humidifier on your device is turned on.</strong></p>
+    </div>
+    <div class="info-card call-us">
+      <div class="card-heading">📞 When To Seek Care</div>
+      <p><strong>Call 911 or go to the emergency room if:</strong></p>
+      <ul>
+        <li>Bleeding does not stop after <strong>two full rounds</strong> of 15–20 minutes of firm pressure (30–40 minutes total)</li>
+        <li>Bleeding is heavy or rapid, or pouring from both nostrils</li>
+        <li>You feel dizzy, faint, or lightheaded</li>
+        <li>You have difficulty breathing</li>
+        <li>You are vomiting blood</li>
+        <li>The nosebleed followed a serious injury to the face or head</li>
+      </ul>
+      <p><strong>Call our office if:</strong></p>
+      <ul>
+        <li>You have frequent or recurring nosebleeds (more than 2–3 in a short period)</li>
+        <li>You take <strong>blood thinners</strong> (warfarin, apixaban, rivaroxaban, clopidogrel) or daily aspirin and have a nosebleed</li>
+        <li>You notice unusual bleeding or bruising elsewhere on your body</li>
+        <li>A child <strong>under 2 years old</strong> has a nosebleed</li>
+      </ul>
+    </div>
+  </div>
 
 </div><!-- /panel-info -->
 
@@ -1981,9 +2150,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Travis Schultz</div>
+        <a href="mailto:tschultz@coloradoent.com">✉️ tschultz@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -1992,9 +2160,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Allie Mitchell</div>
+        <a href="mailto:amitchell@coloradoent.com">✉️ amitchell@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2003,9 +2170,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Edwin Reyes</div>
+        <a href="mailto:ereyes@coloradoent.com">✉️ ereyes@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2014,9 +2180,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Kristi Stevens</div>
+        <a href="mailto:kstevens@coloradoent.com">✉️ kstevens@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2025,9 +2190,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Michael Birdsley</div>
+        <a href="mailto:mbirdsley@coloradoent.com">✉️ mbirdsley@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2036,9 +2200,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Julia Lewis</div>
+        <a href="mailto:jlewis@coloradoent.com">✉️ jlewis@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2047,9 +2210,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">DO</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Juliana Juarez</div>
+        <a href="mailto:jjuarez@coloradoent.com">✉️ jjuarez@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2058,9 +2220,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Darren Beagle</div>
+        <a href="mailto:dbeagle@coloradoent.com">✉️ dbeagle@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2069,9 +2230,8 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">MD</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Evan Jernigan</div>
+        <a href="mailto:ejernigan@coloradoent.com">✉️ ejernigan@coloradoent.com</a>
       </div>
     </div>
     <div class="provider-card">
@@ -2080,43 +2240,35 @@ footer { text-align: center; padding: 1.4rem 1rem; font-size: 0.77rem; color: va
       <div class="p-cred">PA-C</div>
           <div class="provider-ma">
         <div class="ma-label">Medical Assistant</div>
-        <div class="ma-name">[MA Name]</div>
-        <a href="mailto:[ma-email]">✉️ [MA Email]</a>
-        <a href="tel:+10000000000">📞 (000) 000-0000</a>
+        <div class="ma-name">Colleen Galvin</div>
+        <a href="mailto:cgalvin@coloradoent.com">✉️ cgalvin@coloradoent.com</a>
       </div>
     </div>
   </div>
   <p class="section-title">Contact Our Team</p>
   <div class="contact-grid">
     <div class="contact-card">
-      <div class="role">Surgeon</div>
-      <div class="name">[Surgeon Name], MD</div>
-      <a href="tel:+10000000000">📞 (000) 000-0000</a>
-      <a href="mailto:surgeon@coloradoent.com">✉️ surgeon@coloradoent.com</a>
-    </div>
-    <div class="contact-card">
-      <div class="role">Surgical Coordinator</div>
-      <div class="name">[Coordinator Name]</div>
-      <a href="tel:+10000000000">📞 (000) 000-0000</a>
-      <a href="mailto:coordinator@coloradoent.com">✉️ coordinator@coloradoent.com</a>
-    </div>
-    <div class="contact-card">
       <div class="role">Main Office</div>
       <div class="name">Colorado ENT &amp; Allergy</div>
-      <a href="tel:+10000000000">📞 (000) 000-0000</a>
-      <span>📍 [Office Address], Colorado Springs, CO</span>
+      <a href="tel:+17198677800">📞 (719) 867-7800</a>
+    </div>
+    <div class="contact-card">
+      <div class="role">Triage Line</div>
+      <div class="name">Clinical Triage</div>
+      <a href="tel:+17198677824">📞 (719) 867-7824</a>
+      <span>For clinical questions and symptom concerns</span>
     </div>
     <div class="contact-card">
       <div class="role">After-Hours / Urgent</div>
       <div class="name">On-Call Line</div>
-      <a href="tel:+10000000000">📞 (000) 000-0000</a>
+      <a href="tel:+17198677800">📞 (719) 867-7800</a>
       <span>Available 24/7 for urgent post-operative concerns</span>
     </div>
   </div>
   <div class="hours-card">
     <h3>Office Hours</h3>
     <div class="hours-row"><span>Monday – Thursday</span><span>8:00 AM – 5:00 PM</span></div>
-    <div class="hours-row"><span>Friday</span><span>8:00 AM – 4:00 PM</span></div>
+    <div class="hours-row"><span>Friday</span><span>8:00 AM – 12:00 PM</span></div>
     <div class="hours-row"><span>Saturday – Sunday</span><span>Closed (On-call available)</span></div>
   </div>
   <div class="info-card call-us">
